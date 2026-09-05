@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++: gcc.exe Build and Debug Active File",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args": [ "${input:runtimeArgs}" ],
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "C/C++: gcc.exe build active file"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "runtimeArgs",
+      "type": "promptString",
+      "description": "Enter your command line arguments",
+      "default": ""
+    }
+  ]
+}
