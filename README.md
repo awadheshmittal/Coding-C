@@ -49,3 +49,5 @@ for(int i = 0; i < voter_count; i++)
 Using the preferences 2D-array as an index for candidates struct was hard to grasp.
 
 -**Recursion:** By far the hardest yet in 'tideman'. Also, had to make my own function to implement it which was like a "helper function" (used it again in 'matrix'). Learnt about Call Stacks and wrote a whole lotta programs for this topic (atoi, collatz, happy number, recently matrix).
+
+-**Pointers:** Currently doing...
