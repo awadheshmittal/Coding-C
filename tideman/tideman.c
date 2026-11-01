@@ -51,18 +51,12 @@ int main(int argc, char *argv[])
         return 2;
     }
     for (int i = 0; i < candidate_count; i++)
-    {
         candidates[i] = argv[i + 1];
-    }
 
     // Clear graph of locked in pairs
     for (int i = 0; i < candidate_count; i++)
-    {
         for (int j = 0; j < candidate_count; j++)
-        {
             locked[i][j] = false;
-        }
-    }
 
     pair_count = 0;
     int voter_count;
@@ -107,13 +101,11 @@ int main(int argc, char *argv[])
 bool vote(int rank, char *name, int ranks[])
 {
     for(int i = 0; i < candidate_count; i++)
-    {
         if(strcmp(name, candidates[i]) == 0)
         {
             ranks[rank] = i;
             return true;
         }
-    }
     return false;
 }
 
@@ -121,15 +113,9 @@ bool vote(int rank, char *name, int ranks[])
 void record_preferences(int ranks[])
 {
     for(int i = 0; i < candidate_count; i++)
-    {
         for(int j = 0; j < candidate_count; j++)
-        {
             if(i < j)
-            {
                 preferences[ranks[i]][ranks[j]]++;
-            }
-        }
-    }
     return;
 }
 
@@ -138,7 +124,6 @@ void add_pairs(void)
 {
     pair_count = 0;
     for(int i = 0; i < candidate_count; i++)
-    {
         for(int j = i + 1; j < candidate_count; j++) // Can also use a if(j > i) nest
         {
             if(preferences[i][j] > preferences[j][i])
@@ -152,12 +137,9 @@ void add_pairs(void)
                 pairs[pair_count].loser = i;
             }
             else
-            {
                 continue;
-            }
             pair_count++;
         }
-    }
     return;
 }
 
@@ -166,17 +148,13 @@ void sort_pairs(void)
 {
     // Bubble Sort
     for(int i = pair_count - 1; i > 0; i--)
-    {
         for(int j = 0; j < i; j++)
-        {
             if(preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j+1].winner][pairs[j+1].loser])
             {
                 pair temp = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = temp;
             }
-        }
-    }
     return;
 }
 
@@ -185,9 +163,7 @@ bool has_path(int C1, int C2)
 {
     // Base Case: Maps together (n-1) Call Stack's C1 and C2 using i == C1 of nth Call Stack
     if(C1 == C2)
-    {
         return true;
-    }
 
     /* Recursive Case:
     Loops over candidates to find path from C1 to any other candidate 'i' (locked edge)
@@ -195,12 +171,8 @@ bool has_path(int C1, int C2)
     Hence, for next Call Stack, C1 == i; and repeat..
     */
     for(int i = 0; i < candidate_count; i++)
-    {
         if(locked[C1][i] && has_path(i, C2))
-        {
             return true;
-        }
-    }
     return false;
 }
 
@@ -208,12 +180,8 @@ bool has_path(int C1, int C2)
 void lock_pairs(void)
 {
     for(int i = 0; i < pair_count; i++)
-    {
         if(!has_path(pairs[i].loser, pairs[i].winner))
-        {
             locked[pairs[i].winner][pairs[i].loser] = true;
-        }
-    }
     return;
 }
 
@@ -226,18 +194,14 @@ void print_winner(void)
         is_winner = true; // Assume
 
         for(int j = 0; j < candidate_count; j++) // Let j be winner on 1-1
-        {
             if(locked[j][i]) // Atleast one 'j' out of all candidates is able to win over 'i'
             {
                 is_winner = false;
                 break;
             }
-        }
 
         if(is_winner)
-        {
             printf("%s\n", candidates[i]);
-        }
     }
     return;
 }

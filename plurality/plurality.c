@@ -59,9 +59,7 @@ int main(int argc, char *argv[])
 
         // Check for invalid vote
         if (!vote(name))
-        {
             printf("Invalid vote.\n");
-        }
         
     }
 
@@ -73,13 +71,11 @@ int main(int argc, char *argv[])
 bool vote(char name[100])
 {
     for(int i = 0; i < candidate_count; i++)
-    {
         if(strcmp(name, candidates[i].name) == 0)
         {
             candidates[i].votes++;
             return true;
         }
-    }
     return false;
 }
 
@@ -88,19 +84,11 @@ void print_winner(void)
 {
     int max_votes = 0;
     for(int i = 0; i < candidate_count; i++)
-    {
         if(candidates[i].votes >= max_votes)
-        {
             max_votes = candidates[i].votes;
-        }
-    }
 
     for(int i = 0; i < candidate_count; i++)
-    {
         if(max_votes == candidates[i].votes)
-        {
             printf("Winner(s): %s\n", candidates[i].name);
-        }
-    }
     return;
 }

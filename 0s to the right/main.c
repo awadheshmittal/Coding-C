@@ -15,22 +15,16 @@ int main()
 
     int new_array[n];
     for(int i = 0; i < n; i++)
-    {
         new_array[i] = 0;
-    }
 
     int idx = 0;
     for(int i = 0; i < n; i++)
-    {
         if(array[i] != 0)
         {
             new_array[idx] = array[i];
             idx++;
         }
-    }
 
     for(int i = 0; i < n; i++)
-    {
         printf("%d ", new_array[i]);
-    }
 }

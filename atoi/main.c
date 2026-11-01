@@ -21,9 +21,7 @@ int atoi(char string[])
 {
     // Base Case
     if(strlen(string) == 0)
-    {
         return 0;
-    }
 
     // Recursive Case
     int n = string[strlen(string) - 1] - '0';

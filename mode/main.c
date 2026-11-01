@@ -16,10 +16,9 @@ int main()
 
     int max = array[0];
     for(int i = 0; i < n; i++)
-    {
         if(max < array[i])
             max = array[i];
-    }
+    
 
     // Here, count[i] will basically function like "count of i"
     // Here, "max + 1" because if largest element is 0; sizeof(count) needs to be 1..
@@ -31,15 +30,11 @@ int main()
     
     int highest_count = count[0];
     for(int i = 0; i <= max; i++)
-    {
         if(highest_count <= count[i])
             highest_count = count[i];
-    }
     for(int i = 0; i <= max; i++)
-    {
         if(count[i] == highest_count)
             printf("%d ", i);
-    }
 }
 
 // Keeping this part commented for later reflection if ever needed..

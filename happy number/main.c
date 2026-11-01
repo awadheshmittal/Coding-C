@@ -21,12 +21,8 @@ int main()
     }
 
     for(int i = 0; i < n; i++)
-    {
         if((array[i] > 0) && is_happy(array[i]))
-        {
             printf("Term %d ", i+1);
-        }
-    }
     return 0;
 }
 
@@ -34,13 +30,9 @@ bool is_happy(int n)
 {
     // Base Case
     if(n == 1)
-    {
         return true;
-    }
     else if(n == 4)
-    {
         return false;
-    }
 
     // Recursive Case
     int sum = 0, digit;

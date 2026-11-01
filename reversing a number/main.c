@@ -22,13 +22,9 @@ int main()
     printf("The reversed number is: %d\n", reverse);
 
     if(reverse == temp) 
-    {
         printf("The number is a palindrome!");
-    }
     else
-    {
         printf("The number is not a palindrome!");
 
-    }
     return 0;
 }

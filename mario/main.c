@@ -30,22 +30,16 @@ int main()
     {
         // drawing a pyramid roughly, spaces + hashes in each row equal height (width)
         for(space = 1; space <= height - row; space++)
-        {
             printf(" ");
-        }
 
         // hashes in any row equal the exact row no.
         for(hash = 1; hash <= row; hash++)
-        {
             printf("#");
-        }
 
         printf("  ");
 
         for(hash = 1; hash <= row; hash++)
-        {
             printf("#");
-        }
 
         printf("\n");
     }

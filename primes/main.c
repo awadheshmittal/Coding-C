@@ -16,9 +16,7 @@ int main()
             continue;
         }
         else if(n == 1)
-        {
             break;
-        }
 
         int isPrime = 1;
         int divisor = 2;
@@ -33,13 +31,9 @@ int main()
         }
 
         if(isPrime == 1)
-        {
             prime++;
-        }
         else
-        {
             composite++;
-        }
     }
     while(n != 1);
 

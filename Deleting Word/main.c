@@ -21,12 +21,11 @@ int main()
     {
         bool match = true;
         for(int j = 0; j < word_len; j++)
-        {
             if(sentence[i + j] != word[j])
             {
                 match = false;
                 break;
-            }}
+            }
 
         if (match)
         {

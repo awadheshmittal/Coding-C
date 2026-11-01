@@ -36,9 +36,7 @@ int main()
 
         case '/':
             if(b != 0)
-            {
                 result = a/b;
-            }
             else
             {
                 printf("Division by 0 is invalid!");

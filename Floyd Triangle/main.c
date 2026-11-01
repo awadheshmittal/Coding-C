@@ -7,7 +7,6 @@ int main()
     printf("Enter number of rows to generate: ");
     scanf("%d", &rows);
 
-
     int n = 1;
     for(int i = 1; i <= rows; i++)
     {

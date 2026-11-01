@@ -56,9 +56,7 @@ int main(int argc, char *argv[])
             ciphertext[j] = tolower(argv[1][index]);
         }
         else
-        {
             ciphertext[j] = plaintext[j];
-        }
     }
 
     printf("Ciphertext: %s\n", ciphertext);

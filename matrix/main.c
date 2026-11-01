@@ -14,13 +14,11 @@ int main()
     scanf("%d%d", &r1, &c1);
     int A[r1][c1];
     for(int i = 0; i < r1; i++)
-    {
         for(int j = 0; j < c1; j++)
         {
             printf("R%dC%d: ", i+1, j+1);
             scanf("%d", &A[i][j]);
         }
-    }
 
     printf("\n");
 
@@ -29,18 +27,14 @@ int main()
     scanf("%d%d", &r2, &c2);
     int B[r2][c2];
     for(int i = 0; i < r2; i++)
-    {
         for(int j = 0; j < c2; j++)
         {
             printf("R%dC%d: ", i+1, j+1);
             scanf("%d", &B[i][j]);
         }
-    }
 
     if(c1 != r2)
-    {
         printf("Matrix multiplication not possible!");
-    }
     else
     {
         int C[r1][c2];
@@ -49,21 +43,15 @@ int main()
         {
             printf("[");
             for(int j = 0; j < c2; j++)
-            {
                 printf("%3d ", C[i][j]);
-            }
             printf("]\n");
         }
     }
 
     if(c1 == r1)
-    {
         printf("Determinant is %d", determinant(c1, A));
-    }
     else
-    {
         printf("Determinant cannot be calculated for the matrix!");
-    }
     
     return 0;
 }
@@ -72,16 +60,12 @@ int main()
 void multiply(int r1, int c1, int r2, int c2, int A[r1][c1], int B[r2][c2], int C[r1][c2])
 {
     for(int i = 0; i < r1; i++)
-    {
         for(int j = 0; j < c2; j++)
         {
             C[i][j] = 0;
             for(int k = 0; k < c1; k++)
-            {
                 C[i][j] += A[i][k] * B[k][j];
-            }
         }
-    }
 }
 
 // Determinant:
@@ -89,9 +73,7 @@ int determinant(int n, int A[n][n])
 {
     // Base Case
     if(n == 1)
-    {
         return A[0][0];
-    }
 
     // Recursive Case
     int det = 0;
@@ -110,13 +92,11 @@ void submatrix(int n, int column, int A[n][n], int C[n-1][n-1]) // Helper Functi
     {
         int index2 = 0;
         for(int j = 0; j < n; j++)
-        {
             if(j != column)
             {
                 C[index1][index2] = A[i][j];
                 index2++;
             }
-        }
         index1++;
     }
 }

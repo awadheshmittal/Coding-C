@@ -21,18 +21,14 @@ int main()
     {
         int k = i;
         for(int j = i+1; j < n; j++)
-        {
             if(array[j] < array[k])
                 k = j;
-        }
         int temp = array[i];
         array[i] = array[k];
         array[k] = temp;
     }
     for(int i = 0; i < n; i++)
-    {
         printf("%d ", array[i]);
-    }
 
     // Asking For Searching Number
     printf("\nWhich number to search for? ");

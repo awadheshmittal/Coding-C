@@ -14,17 +14,11 @@ int main()
     for(int i = 0; text[i] != '\0'; i++)
     {
         if(isspace(text[i]))
-        {
             words++;
-        }
         if(isalpha(text[i]))
-        {
             letters++;
-        }
         if(text[i] == '.' || text[i] == '!' || text[i] == '?')
-        {
             sentences++;
-        }
     }
 
     float L = (letters / (float) words) * 100;
@@ -33,17 +27,11 @@ int main()
     float index = 0.0588 * L - 0.296 * S - 15.8;
     
     if(round(index) < 1)
-    {
         printf("Before Grade 1");
-    }
     else if(round(index) >= 16)
-    {
         printf("Grade 16+");
-    }
     else
-    {
         printf("Grade %.0f", round(index));
-    }
 
     return 0;
 

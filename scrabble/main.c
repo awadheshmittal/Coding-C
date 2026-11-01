@@ -20,17 +20,11 @@ int main()
     int sum1 = PointsScored(words[0]), sum2 = PointsScored(words[1]);
 
     if(sum1 < sum2)
-    {
         printf("Player 2 wins!");
-    }
     else if(sum1 > sum2)
-    {
         printf("Player 1 wins!");
-    }
     else
-    {
         printf("Tie!");
-    }
 
     return 0;
 }
@@ -42,12 +36,10 @@ int PointsScored(char word[])
     const int score[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
     for(int i = 0; word[i] != '\0'; i++)
-    {
         if(isalpha(word[i]))
         {
             int index = toupper(word[i]) - 'A';
             sum += score[index];
         }
-    }
     return sum;
 }
